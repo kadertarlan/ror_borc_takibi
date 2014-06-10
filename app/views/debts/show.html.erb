@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Toplam:</strong>
+  <%= @debt.total %>
+</p>
+
+<p>
+  <strong>Ödenen:</strong>
+  <%= @debt.paid %>
+</p>
+
+<p>
+  <strong>Ödenecek:</strong>
+  <%= @debt.payable %>
+</p>
+
+<p>
+  <strong>Borçlanan Tarih:</strong>
+  <%= @debt.date_of_issue %>
+</p>
+
+<p>
+  <strong>Ödenecek Tarih:</strong>
+  <%= @debt.payable_date %>
+</p>
+<br>
+<%= link_to 'Düzenle', edit_debt_path(@debt) %> |
+<%= link_to 'Geri', debts_path %><br><br>
