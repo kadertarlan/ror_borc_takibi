@@ -42,4 +42,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-
+gem 'foundation-rails'
+group :development do
+  gem 'rails_layout', github: 'RailsApps/rails_layout'
+end
+gem "paperclip"

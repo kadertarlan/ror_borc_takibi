@@ -1,0 +1,35 @@
+<%= form_for(@friend) do |f| %>
+  <% if @friend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+      <% @friend.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+  <div class="field">
+    <h4><font color="green">Borçlunun Adı Soyadı: </br>
+    <%= f.text_field :name %></h4>
+  </div><br>
+  <div class="field">
+    <h4>E-Mail Adresi:</br>
+    <%= f.text_field :email %></h4>
+  </div><br>
+  <div class="field">
+    <h4>Sana Borçlanan Kaçıncı Kişi:</br>
+    <%= f.number_field :user_id %></h4>
+  </div><br>
+  <div class="field">
+    <h4>Twitter Kullanıcı Adi:<br>
+    <%= f.text_field :twitter_username %></h4>
+   </div><br>
+
+
+  <div class="actions" value="Gönder" name="Gönder">
+    <%= f.submit %>
+  </div>
+<% end %>

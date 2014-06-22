@@ -1,28 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Toplam:</strong>
-  <%= @debt.total %>
+<p><br>
+  <h4><font color="green">Toplam:</font>
+  <%= @debt.total %></h4>
 </p>
 
 <p>
-  <strong>Ödenen:</strong>
-  <%= @debt.paid %>
+  <h4><font color="green">Ödenen:</font>
+  <%= @debt.paid %></h4>
 </p>
 
 <p>
-  <strong>Ödenecek:</strong>
-  <%= @debt.payable %>
+  <h4><font color="green">Ödenecek:</font>
+  <%= @debt.payable %></h4>
 </p>
 
 <p>
-  <strong>Borçlanan Tarih:</strong>
-  <%= @debt.date_of_issue %>
+  <h4><font color="green">Borçlanan Tarih:</font>
+  <%= @debt.date_of_issue %></h4>
 </p>
 
 <p>
-  <strong>Ödenecek Tarih:</strong>
-  <%= @debt.payable_date %>
+  <h4><font color="green">Ödenecek Tarih:</font>
+  <%= @debt.payable_date %></h4>
 </p>
 <br>
 <%= link_to 'Düzenle', edit_debt_path(@debt) %> |

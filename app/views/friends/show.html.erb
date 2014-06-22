@@ -1,24 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Adı, Soyadı:</strong>
+  <h4><font color=blue>Adı, Soyadı:</font>
   <%= @friend.name %>
-</p>
+</h4></p>
 
 <p>
-  <strong>Email:</strong>
+  <h4><font color=blue>Email:</font>
   <%= @friend.email %>
-</p>
+</h4></p>
 
 <p>
-  <strong>Borçlu Sırası:</strong>
+  <h4><font color=blue>Borçlu Sırası:</font>
   <%= @friend.user_id %>
-</p>
+</h4></p>
 
 <p>
-  <strong>Twitter Kullanıcı Adı:</strong>
+  <h4><font color=blue>Twitter Kullanıcı Adı:</font>
   <%= @friend.twitter_username %>
-</p>
+</h4></p>
 
 <%= link_to 'Düzenle', edit_friend_path(@friend) %> |
 <%= link_to 'Geri', friends_path %>
+
+

@@ -1,26 +1,25 @@
-<h1>Borçlar Listesi</h1>
+<br><h1>Borçlar Listesi</h1><br>
 
-<table>
+<table border="1"  cellpadding="10" bordercolor="red">
   <thead>
     <tr>
-      <th>**Toplam Borç** </th>
-      <th>**Ödenen Borç**</th>
-      <th>**Kalan Borç**</th>
-      <th>**Aldığı Tarih**</th>
-      <th>**Ödeme Tarihi**</th>
-      <th colspan="3"></th>
+      <th><h4>**Toplam Borç**</h4> </th>
+      <th><h4>**Ödenen Borç**</h4></th>
+      <th><h4>**Kalan Borç**</h4></th>
+      <th><h4>**Aldığı Tarih**</h4></th>
+      <th><h4>**Ödeme Tarihi**</h4></th>
+      <th colspan="38"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @debts.each do |debt| %>
       <tr>
-        <td><%= debt.total %></td>
-        <td><%= debt.paid %></td>
-        <td><%= debt.payable %></td>
-        <td><%= debt.total %></td>
-        <td><%= debt.date_of_issue %></td>
-        <td><%= debt.payable_date %></td>
+        <td><h5><%= debt.total %></h5></td>
+        <td><h5><%= debt.paid %></h5></td>
+        <td><h5><%= debt.payable %></h5></td>
+        <td><h5><%= debt.date_of_issue %></h5></td>
+        <td><h5><%= debt.payable_date %></h5></td>
         <td><%= link_to '  Göster', debt %></td>
         <td><%= link_to 'Düzenle', edit_debt_path(debt) %></td>
         <td><%= link_to 'Sil', debt, method: :delete, data: { confirm: 'Are you sure?' } %></td>

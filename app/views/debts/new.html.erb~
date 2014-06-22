@@ -1,0 +1,8 @@
+<h1><font color=green><br>Yeni Borç</h1>
+
+<%= render 'form' %>
+
+<br>
+
+
+<h5><%= link_to 'Geri', debts_path %></h5>

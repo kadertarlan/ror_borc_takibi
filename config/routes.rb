@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   resources :debts
 
-  get 'welcome/index'
+  get '/welcome/index'
+  get 'friends/new'
+  get 'friends/index'
+  get 'debts/new'
+  get 'debts/index'
+ 
 
     resources :friends
     devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }

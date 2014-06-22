@@ -1,20 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Railscik</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8" />
+  <title>Form</title>
+  <%= stylesheet_link_tag 'application', :media => 'screen'%>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
+<div id="wrapper"><!-- #wrapper -->
+<header><!-- header -->
+<div id="headerlogo"><%= image_tag "", :size =>"0x0" %></div>
+<h1 ><a href="#"></a></h1>
+<h1><FONT COLOR="green">BORÇ TAKİBİ</font></h1>
+</header><!-- end of header -->
+	
+        <nav><!-- top nav -->
+<div class="menu">
+<ul>
+<li><a href="/friends/new">Arkadaş Ekle</a></li>
+<li><a href="/friends">Borçlu Arkadaşların</a><li>
+<li><a href="/debts/new">Yeni Borç Ekle<a><li>
+<li><a href="/debts">Borçlar Listesi<a><li>
+<li><a href="#">Support</a><li>
+
+</ul>
+</div>
+</nav><!-- end of top nav -->
+
+
+
+<section id="main"><!-- #main content and sidebar area -->
+
+
+
 
 <%= yield %>
-<% if user_signed_in? %>
-Signed in as <%= current_user.name %>. Not you?
-<%= link_to "Sign out", destroy_user_session_path,:method => :delete %>
-<% else %>
-<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
-<% end %>
+</section><!-- end of #content -->
+<aside id="sidebar"><!-- sidebar -->
+
+<h3>Connect With Us</h3>
+<table><tr>
+<td><img src="http://i.imgur.com/OTo13AQ.png?1"></td><td>
+<a href="#">Facebook</a></font></td></tr>
+<tr><td><img src="http://i.imgur.com/j1ZhKwr.png?1"></td>
+<td><a href="#">Twitter</a><td><tr>
+		</table>
+
+	</aside><!-- end of sidebar -->
+
+	</section><!-- end of #main content and sidebar-->
+	
+		<footer>
+		<section id="footer-area">
+
+		<section id="footer-outer-block">
+<aside class="footer-segment">
+<h4><a href="/welcome/index">Ana Sayfaya Git</a>
+</aside><!-- end of #first footer segment -->
+
+
+<!-- end of #second footer segment -->
+
+<aside class="footer-segment">
+<h4><a href="#"></a></h4>
+</aside><!-- end of #third footer segment -->
+
+<aside class="footer-segment">
+<h4><a href="#"></a></h4>
+</aside><!-- end of #third footer segment -->
+					
+					
+<aside class="footer-segment">
+<h4> <a href="#">Çıkış<a></h4>					<br>							<p>&copy;2014 <a href="#">BorcTakibi.com</a> </p>
+					
+</aside><!-- end of #fourth footer segment -->
+
+		</section><!-- end of footer-outer-block -->
+
+		</section><!-- end of footer-area -->
+	</footer>
+	
+</div><!-- #wrapper -->
+<!-- Free template created by http://freehtml5templates.com -->
+
 
 </body>
 </html>

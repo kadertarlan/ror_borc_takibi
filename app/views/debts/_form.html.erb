@@ -10,26 +10,27 @@
       </ul>
     </div>
   <% end %>
-
+<br>
   <div class="field">
-    <font color=blue>Toplam Borç:</font><br>
-    <%= f.text_field :total %>
+    <font color="purple">Toplam Borç:</font><br>
+    <%= f.text_field :total %><br>
+  </div><div class="field"><br>
+    <font color="purple">Ödenen Borç:</font><br>
+    <%= f.text_field :paid %><br>
   </div>
-    <font color=blue>Ödenen Borç:</font><br>
-    <%= f.text_field :paid %>
-  </div>
+  
+  <div class="field"><br>
+    <font color="purple"> Kalan Borç:</font><br>
+    <%= f.text_field :payable %><br>
+  </div><br>
   <div class="field">
-    <font color=blue> Kalan Borç:</font><br>
-    <%= f.text_field :payable %>
-  </div>
-  <div class="field">
-    Borç Alınan Tarih:<br>
+    <font color="purple">Borç Alınan Tarih:<br></font>
     <%= f.date_select :date_of_issue %>
-  </div>
+  </div><br>
   <div class="field">
-    Borç Ödenecek Tarih:<br>
+    <font color="purple">Borç Ödenecek Tarih:<br></font>
     <%= f.date_select :payable_date %>
-  </div>
+  </div><br>
   <div class="actions">
     <%= f.submit %>
   </div>
