@@ -47,3 +47,6 @@ group :development do
   gem 'rails_layout', github: 'RailsApps/rails_layout'
 end
 gem "paperclip"
+group :production do
+  gem 'pg'
+end
