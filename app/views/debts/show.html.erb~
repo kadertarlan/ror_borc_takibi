@@ -9,8 +9,6 @@
 <p>
   <h4><font color="green">Ödenen:</font>
   <%= @debt.paid %></h4>
-</p>
-
 <p>
   <h4><font color="green">Ödenecek:</font>
   <%= @debt.total - @debt.paid %></h4>
@@ -26,10 +24,16 @@
   <%= @debt.payable_date %></h4>
 </p>
 <p>
+
+  <% tarih2=@debt.payable_date %>
+  <% tarih=DateTime.now.to_date %>
+  <% fark =tarih2-tarih %>
+  <% fark =fark.to_i %>
   <h4><font color="green">Borcu Ödemesi için Kalan Gün:</font>
-  <% if @my_time > 0 %>
-   <%= @debt.payable_date - @debt.date_of_issue %></h4>
+  <% if (fark < 0) %> 
+    <h4><%= fark*-1  %>  gündür borcunuz gecikiyor</h4>
   <% end %>
+ <%= fark %></h4>
 </p>
 <br>
 <%= link_to 'Düzenle', edit_debt_path(@debt) %> |

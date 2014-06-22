@@ -11,7 +11,9 @@ class DebtsController < ApplicationController
   # GET /debts/1.json
   def show
     @my_time=Time.now
-    @my=Time.now    
+     
+    
+    
   end
 
   # GET /debts/new
