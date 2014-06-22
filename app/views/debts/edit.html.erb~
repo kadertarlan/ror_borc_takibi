@@ -1,0 +1,6 @@
+<h1>Düzenle</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Göster', @debt %> |
+<%= link_to 'Geri', debts_path %>
