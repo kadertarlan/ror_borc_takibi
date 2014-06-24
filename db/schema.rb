@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20140610220312) do
   create_table "debts", force: true do |t|
     t.decimal  "total"
     t.decimal  "paid"
-    t.decimal  "payable"
     t.date     "date_of_issue"
     t.date     "payable_date"
     t.datetime "created_at"
