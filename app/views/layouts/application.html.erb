@@ -45,7 +45,15 @@
 <td><img src="http://i.imgur.com/OTo13AQ.png?1"></td><td>
 <a href="#">Facebook</a></font></td></tr>
 <tr><td><img src="http://i.imgur.com/j1ZhKwr.png?1"></td>
-<td><a href="#">Twitter</a><td><tr>
+
+<td>
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", signout_path %>
+<% else %>
+  <%= link_to "Twitter", "/auth/twitter" %>
+<% end %>
+<td><tr>
 		</table>
 
 	</aside><!-- end of sidebar -->

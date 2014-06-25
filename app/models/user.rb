@@ -1,28 +1,15 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  #devise :database_authenticatable, :registerable,
-   #      :recoverable, :rememberable, :trackable, :validatable
-  devise :omniauthable
-  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    if user
-      return user
-    else
-      registered_user = User.where(:email => auth.uid + "@twitter.com").first
-      if registered_user
-        return registered_user
-      else
+  
+ devise :omniauthable
+  
 
-        user = User.create(name:auth.extra.raw_info.name,
-                            provider:auth.provider,
-                            uid:auth.uid,
-                            email:auth.uid+"@twitter.com",
-                            password:Devise.friendly_token[0,20],
-                          )
-      end
-
-    end
+def self.create_with_omniauth(auth)
+  create! do |user|
+    user.provider = auth["provider"]
+    user.uid = auth["uid"]
+    user.name = auth["info"]["name"]
   end
+end
+
 
 end
