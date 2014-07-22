@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20140610220312) do
     t.decimal  "paid"
     t.date     "date_of_issue"
     t.date     "payable_date"
+    t.string   "colle"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

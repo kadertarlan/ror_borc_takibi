@@ -5,6 +5,7 @@ class CreateDebts < ActiveRecord::Migration
       t.decimal :paid
       t.date :date_of_issue
       t.date :payable_date
+      t.string :colle
 
       t.timestamps
     end
