@@ -1,3 +1,4 @@
+<div style="background: darkseagreen; padding: 10px 5px; ">
 <%= form_for(@debt) do |f| %>
   <% if @debt.errors.any? %>
     <div id="error_explanation">
@@ -18,7 +19,7 @@
       <%= f.collection_select :colle, Friend.all,:name,:name, include_blank: true %>
 
 
-  </div><br>
+  </div><br><br>
   <div class="field">
     <font color="purple">Toplam Borç:</font><br>
     <%= f.text_field :total %><br>
@@ -26,17 +27,18 @@
     <font color="purple">Ödenen Borç:</font><br>
     <%= f.text_field :paid %><br>
   </div>
-  
+  <br><br>
   <div class="field">
     <font color="purple">Borç Alınan Tarih:<br></font>
     <%= f.date_select :date_of_issue %>
-  </div><br>
+  </div><br><br>
   <div class="field">
     <font color="purple">Borç Ödenecek Tarih:<br></font>
     <%= f.date_select :payable_date %>
-  </div><br>
+  </div><br><br>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 <br>
+</div>

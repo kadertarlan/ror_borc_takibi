@@ -1,26 +1,29 @@
-<br><h1>Borçlar Listesi</h1><br>
+<br><br><br><div style="background: #ffddff; padding: 10px 5px; ">
+<br>
+<h1><font color="purple">Borçlar Listesi</font></h1><br><br>
 
-<table border="1"  cellpadding="10" bordercolor="red">
+<table border="1" cellpadding="150" width="933" bordercolor="purple" bgcolor=#CCAACC>
   <thead>
     <tr>
-      <th><h4>**Borçlu**</h4> </th>
-      <th><h4>**Toplam Borç**</h4> </th>
-      <th><h4>**Ödenen Borç**</h4></th>
-      <th><h4>**Kalan Borç**</h4></th>
-      <th><h4>**Aldığı Tarih**</h4></th>
-      <th><h4>**Ödeme Tarihi**</h4></th>
-      <th colspan="38"></th>
+      <th style="color: #8b3a62;">Borçlu</th>
+      <th style="color: #8b3a62;">Toplam Borç</th>
+      <th style="color: #8b3a62;">Ödenen Borç</th>
+      <th style="color: #8b3a62;">Kalan Borç</th>
+      <th style="color: #8b3a62;">Aldığı Tarih</th>
+      <th style="color: #8b3a62;">Ödeme Tarihi</th>
+      <th style="color: #8b3a62;" colspan="38">Seçenekler</th>
     </tr>
   </thead>
 
   <tbody>
     <% @debts.each do |debt| %>
       <tr>
-        <td><h5><%= debt.colle %></h5></td>
-        <td><h5><%= debt.total %></h5></td>
-        <td><h5><%= debt.paid %></h5></td>
-        <td><h5><%= debt.date_of_issue %></h5></td>
-        <td><h5><%= debt.payable_date %></h5></td>
+        <td><%= debt.colle %></td>
+        <td><%= debt.total %></td>
+        <td><%= debt.paid %></td>
+        <td><% debt.total %></td>
+        <td><%= debt.date_of_issue %></td>
+        <td><%= debt.payable_date %></td>
         <td><%= link_to '  Göster', debt %></td>
         <td><%= link_to 'Düzenle', edit_debt_path(debt) %></td>
         <td><%= link_to 'Sil', debt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -29,7 +32,15 @@
   </tbody>
 </table>
 
-<br>
+<br><br><br>
 
 <h3><%= link_to 'Yeni Borç Ekle', new_friend_path %></h3>
-<br>
+<br><br>
+
+<style type="text/css">
+  table th, table tr, table td{
+      padding: 10px;
+      color: purple;
+  }
+</style>
+</div>

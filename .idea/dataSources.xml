@@ -7,6 +7,18 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
+    <data-source source="LOCAL" name="Rails ror_borc_takibi: test" uuid="5dece642-528f-48fc-8ea5-1429f44241f3">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:db/test.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails ror_borc_takibi: production" uuid="fecab94b-f9bb-4663-a369-feb687b79c54">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:db/production.sql</jdbc-url>
+      <libraries />
+    </data-source>
   </component>
 </project>
 

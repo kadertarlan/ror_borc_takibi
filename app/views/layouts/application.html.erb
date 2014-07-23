@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <title>Form</title>
   <%= stylesheet_link_tag 'application', :media => 'screen'%>
+  <%#= stylesheet_link_tag 'normalize', :media => 'screen' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -11,87 +12,88 @@
 <body>
 <div id="wrapper"><!-- #wrapper -->
 <header><!-- header -->
-<div id="headerlogo"><%= image_tag "", :size =>"0x0" %></div>
-<h1 ><a href="#"></a></h1>
-<h1><FONT COLOR="green">BORÇ TAKİBİ</font></h1>
+    <div id="headerlogo"><%= image_tag "", :size =>"0x0" %></div>
+    <h1 ><a href="#"></a></h1>
+    <h1><FONT COLOR="green">BORÇ TAKİBİ</font></h1>
 </header><!-- end of header -->
-	
-        <nav><!-- top nav -->
-<div class="menu">
-<ul>
-<li><%= link_to_unless_current "Arkadaş Ekle","/friends/new" %></li>
-<li><%= link_to_unless_current "Borçlu Arkadaşların" ,"/friends"%><li>
-<li><%= link_to_unless_current "Yeni Borç Ekle" , "/debts/new"%><li>
-<li><%= link_to_unless_current "Borçlar Listesi" ,"/debts"%><li>
-<li><%= link_to_unless_current "Support","" %><li>
 
-</ul>
-</div>
-</nav><!-- end of top nav -->
+    <nav><!-- top nav -->
+        <div class="menu">
+            <ul>
+                <li><%= link_to_unless_current "Arkadaş Ekle","/friends/new" %></li>
+                <li><%= link_to_unless_current "Borçlu Arkadaşların" ,"/friends"%><li>
+                <li><%= link_to_unless_current "Yeni Borç Ekle" , "/debts/new"%><li>
+                <li><%= link_to_unless_current "Borçlar Listesi" ,"/debts"%><li>
+                <li><%= link_to_unless_current "Support","" %><li>
+            </ul>
+        </div>
+    </nav><!-- end of top nav -->
 
 
 
 <section id="main"><!-- #main content and sidebar area -->
-
-
-
-
 <%= yield %>
 </section><!-- end of #content -->
-<aside id="sidebar"><!-- sidebar -->
 
-<h3>Connect With Us</h3>
-<table><tr>
-<td><img src="http://i.imgur.com/OTo13AQ.png?1"></td><td>
-<a href="#">Facebook</a></font></td></tr>
-<tr><td><img src="http://i.imgur.com/j1ZhKwr.png?1"></td>
 
-<td>
-<% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
-<% else %>
-  <%= link_to "Twitter", "/auth/twitter" %>
-<% end %>
-<td><tr>
-		</table>
 
-	</aside><!-- end of sidebar -->
+  <aside id="sidebar"><!-- sidebar -->
+     <h3>Connect With Us</h3>
+     <table>
+       <tr>
+         <td><img src="http://i.imgur.com/OTo13AQ.png?1"></td>
+         <td><a href="#">Facebook</a></font></td>
+       </tr>
+       <tr>
+           <td><img src="http://i.imgur.com/j1ZhKwr.png?1"></td>
+           <td>
+               <% if current_user %>
+                  Welcome <%= current_user.name %>!
+                  <%= link_to "Sign Out", signout_path %>
+               <% else %>
+                  <%= link_to "Twitter", "/auth/twitter" %>
+               <% end %>
+            </td>
+        </tr>
+	 </table>
+
+   </aside><!-- end of sidebar -->
 
 	</section><!-- end of #main content and sidebar-->
-	
-		<footer>
-		<section id="footer-area">
 
-		<section id="footer-outer-block">
-<aside class="footer-segment">
-<h4><a href="/welcome/index">Ana Sayfaya Git</a>
-</aside><!-- end of #first footer segment -->
+
+ <footer>
+   <section id="footer-area">
+      <section id="footer-outer-block">
+
+           <aside class="footer-segment">
+              <h4><a href="/welcome/index">Ana Sayfaya Git</a>
+           </aside><!-- end of #first footer segment -->
 
 
 <!-- end of #second footer segment -->
 
-<aside class="footer-segment">
-<h4><a href="#"></a></h4>
-</aside><!-- end of #third footer segment -->
+           <aside class="footer-segment">
+               <h4><a href="#"></a></h4>
+           </aside><!-- end of #third footer segment -->
 
-<aside class="footer-segment">
-<h4><a href="#"></a></h4>
-</aside><!-- end of #third footer segment -->
-					
-					
-<aside class="footer-segment">
-<h4> <a href="#">Çıkış<a></h4>				<br>	<%= Time.now %><br>			
-<p>&copy;2014 <a href="#">BorcTakibi.com</a> </p>
-					
-</aside><!-- end of #fourth footer segment -->
+           <aside class="footer-segment">
+                <h4><a href="#"></a></h4>
+           </aside><!-- end of #third footer segment -->
 
-		</section><!-- end of footer-outer-block -->
 
-		</section><!-- end of footer-area -->
-	</footer>
-	
+              <aside class="footer-segment">
+                 <h4> <a href="#">Çıkış<a></h4><br>
+                 <% t= Time.now %><%= t.utc %><br><br><br>
+                 <p>&copy;2014 <a href="#">BorcTakibi.com</a> </p>
+
+
+           </aside><!-- end of #fourth footer segment -->
+       </section><!-- end of footer-outer-block -->
+    </section><!-- end of footer-area -->
+ </footer>
 </div><!-- #wrapper -->
+
 <!-- Free template created by http://freehtml5templates.com -->
 
 
